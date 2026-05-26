@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Alpha Mark 隐私政策：说明 Chrome 扩展如何处理用户主动保存的投资信息、AI 处理、数据存储、用户控制和联系方式。"
+    />
+    <title>Alpha Mark 隐私政策</title>
+    <link rel="icon" href="./assets/alpha-mark-logo.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Alpha Mark 首页">
+        <img src="./assets/alpha-mark-logo.png" alt="" class="brand-logo" />
+        <span>Alpha Mark</span>
+      </a>
+
+      <nav class="top-nav" aria-label="主导航">
+        <a href="./index.html#features">功能介绍</a>
+        <a href="./index.html#workflow">工作流</a>
+        <a href="./index.html#positioning">边界说明</a>
+        <a href="./privacy.html" aria-current="page">隐私政策</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="切换主题">
+          <i data-lucide="moon"></i>
+        </button>
+        <a class="header-cta" href="./index.html#waitlist">申请内测</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="privacy-hero" aria-labelledby="privacy-title">
+        <p class="section-kicker">Alpha Mark Privacy Policy</p>
+        <h1 id="privacy-title">隐私政策</h1>
+        <p>
+          本政策说明 Alpha Mark Chrome 扩展如何处理用户主动保存的投资信息。Alpha Mark 是情报整理工具，不提供投资建议、荐股服务、交易服务或收益承诺。
+        </p>
+        <dl class="privacy-meta">
+          <div>
+            <dt>生效日期</dt>
+            <dd>2026-05-26</dd>
+          </div>
+          <div>
+            <dt>服务主体</dt>
+            <dd>Alpha Mark</dd>
+          </div>
+          <div>
+            <dt>联系邮箱</dt>
+            <dd>请使用 Chrome Web Store 商品详情页中的支持邮箱联系我们。</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="privacy-content" aria-label="隐私政策正文">
+        <article>
+          <h2>1. 我们处理哪些信息</h2>
+          <p>
+            Alpha Mark 仅在用户主动点击保存入口、确认保存或主动导出时处理相关数据。我们不会在后台持续读取网页内容。
+          </p>
+          <ul>
+            <li>用户主动保存的正文，例如 X 推文、ChatGPT / Gemini 回答或用户选中的网页文本。</li>
+            <li>来源信息，例如来源平台、来源链接、作者、发布时间和保存时间。</li>
+            <li>用户编辑内容，例如摘要、备注、风险点、验证点和状态。</li>
+            <li>插件工作区标识，例如 workspaceId 和访问 token，用于访问用户自己的情报库。</li>
+            <li>AI 生成结果，例如结构化草稿、资产摘要和用户主动触发的跟踪报告。</li>
+          </ul>
+          <p>
+            Alpha Mark 不会主动读取完整浏览历史，不会读取 Cookie，不会采集交易账户、券商账户、银行卡、支付信息、密码或浏览器保存的登录凭证。
+          </p>
+        </article>
+
+        <article>
+          <h2>2. 信息如何被使用</h2>
+          <p>我们使用用户主动保存的信息提供扩展的核心功能：</p>
+          <ul>
+            <li>生成 AI 结构化情报草稿。</li>
+            <li>保存用户确认后的投资情报。</li>
+            <li>按股票或资产聚合已保存情报。</li>
+            <li>生成用户主动触发的摘要和跟踪报告。</li>
+            <li>支持 Markdown / CSV 导出。</li>
+          </ul>
+          <p>
+            Alpha Mark 不会根据用户数据自动下单，不会替用户做投资决策，也不会向用户提供买入、卖出或收益承诺。
+          </p>
+        </article>
+
+        <article>
+          <h2>3. AI 处理和第三方服务</h2>
+          <p>
+            用户主动保存的内容会通过 HTTPS 发送到 Alpha Mark 服务端，并由服务端调用配置的 AI 模型服务进行结构化处理。当前模型服务商为 DeepSeek API。AI 模型响应会作为数据展示在扩展 UI 中，扩展不会执行远程托管代码。
+          </p>
+          <p>
+            Alpha Mark 不会出售用户数据。除 AI 结构化处理所需的模型服务商外，除非法律法规要求，我们不会与第三方共享用户保存的情报内容。
+          </p>
+        </article>
+
+        <article>
+          <h2>4. 数据存储、传输和安全</h2>
+          <p>
+            用户确认保存的情报会存储在 Alpha Mark 服务端，用于后续查看、编辑、聚合、报告生成和导出。扩展与服务端之间的数据传输使用 HTTPS。模型 API Key 仅保存在服务端，不会存储在浏览器扩展中。
+          </p>
+          <p>
+            本产品当前处于早期阶段。正式公开发布前，我们会将生产 API 域名、数据存储地区、数据保留期限、备份策略和删除流程保持在本政策与 Chrome Web Store 隐私字段中一致。
+          </p>
+        </article>
+
+        <article>
+          <h2>5. 用户控制</h2>
+          <p>用户可以在 Alpha Mark 情报库中查看、编辑、删除和导出自己保存的内容。</p>
+          <p>
+            如需删除整个工作区及其保存内容，请通过本政策顶部列出的联系邮箱联系我们。收到请求后，我们会核对请求来源并处理相关数据删除。
+          </p>
+        </article>
+
+        <article>
+          <h2>6. Chrome 权限说明</h2>
+          <ul>
+            <li><strong>activeTab：</strong>用户主动保存当前页面内容时读取当前页面片段。</li>
+            <li><strong>storage：</strong>保存插件工作区信息、待确认内容和本地页面状态。</li>
+            <li><strong>contextMenus：</strong>提供选中文本右键保存入口。</li>
+            <li><strong>目标站点 host permissions：</strong>在 X、ChatGPT 和 Gemini 页面展示保存入口。</li>
+            <li><strong>产品 API host permission：</strong>与 Alpha Mark 服务端通信。</li>
+          </ul>
+          <p>
+            Alpha Mark 不申请 <code>&lt;all_urls&gt;</code>、浏览历史权限、Cookie 权限或本地命令执行能力。
+          </p>
+        </article>
+
+        <article>
+          <h2>7. 政策更新</h2>
+          <p>
+            如果产品功能、数据处理方式或服务商发生变化，我们会更新本政策，并在 Chrome Web Store 隐私字段中保持一致。
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Alpha Mark</span>
+      <a href="./privacy.html">隐私政策</a>
+    </footer>
+  </body>
+</html>
