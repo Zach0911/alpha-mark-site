@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Alpha Mark 是面向个人投资者的 AI Native Chrome 插件，把 X、ChatGPT、Gemini 中主动保存的投资信息整理成可回看的个人情报库。"
+    />
+    <title>Alpha Mark | AI 投资情报跟踪器</title>
+    <link rel="icon" href="./assets/alpha-mark-logo.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Alpha Mark 首页">
+        <img
+          src="./assets/alpha-mark-logo.png"
+          alt=""
+          class="brand-logo"
+        />
+        <span>Alpha Mark</span>
+      </a>
+
+      <nav class="top-nav" aria-label="主导航">
+        <a href="#features">功能介绍</a>
+        <a href="#workflow">工作流</a>
+        <a href="#positioning">边界说明</a>
+        <a href="#faq">FAQ</a>
+        <a href="./privacy.html">隐私政策</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="切换主题">
+          <i data-lucide="moon"></i>
+        </button>
+        <a class="header-cta" href="#waitlist">申请内测</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-backdrop" aria-hidden="true"></div>
+        <div class="hero-inner">
+          <p class="hero-kicker">AI Native Chrome Extension</p>
+          <h1 id="hero-title">Alpha Mark</h1>
+          <p class="hero-subtitle">你的 AI 投资情报跟踪器</p>
+          <p class="hero-copy">
+            把 X、ChatGPT、Gemini 中值得保存的投资线索，整理成结构化情报卡、资产视图和可回看的复盘报告。
+          </p>
+
+          <div class="trust-row" aria-label="产品状态">
+            <span>Chrome 插件首期</span>
+            <span>X / ChatGPT / Gemini</span>
+            <span>用户确认后保存</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="primary-button" href="#waitlist">
+              <i data-lucide="sparkles"></i>
+              申请内测
+            </a>
+            <a class="secondary-button" href="#features">
+              <i data-lucide="list-checks"></i>
+              查看功能介绍
+            </a>
+          </div>
+
+          <div class="hero-product" aria-label="Alpha Mark 产品界面预览">
+            <div class="product-browser">
+              <div class="browser-top">
+                <span></span>
+                <span></span>
+                <span></span>
+                <div class="address-bar">x.com / market thread / NVDA</div>
+              </div>
+              <div class="product-grid">
+                <div class="source-panel">
+                  <div class="source-author">
+                    <div class="avatar">A</div>
+                    <div>
+                      <strong>@AlphaMacro</strong>
+                      <small>刚刚发布</small>
+                    </div>
+                  </div>
+                  <p>
+                    NVDA 数据中心需求仍然强劲，Blackwell 放量后下一季度收入可能继续超预期。
+                  </p>
+                  <button type="button">保存为投资情报</button>
+                </div>
+                <div class="draft-panel">
+                  <div class="draft-header">
+                    <span>AI 结构化草稿</span>
+                    <strong>待确认</strong>
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>关联资产</dt>
+                      <dd>NVDA</dd>
+                    </div>
+                    <div>
+                      <dt>观点方向</dt>
+                      <dd>偏多</dd>
+                    </div>
+                    <div>
+                      <dt>验证点</dt>
+                      <dd>数据中心收入、CSP Capex、Blackwell 出货</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-section" id="features" aria-labelledby="features-title">
+        <div class="section-heading">
+          <p>功能介绍</p>
+          <h2 id="features-title">从零散收藏到可复盘情报库</h2>
+        </div>
+
+        <div class="feature-list">
+          <article class="feature-row">
+            <div class="feature-copy">
+              <span class="feature-label">
+                <i data-lucide="mouse-pointer-click"></i>
+                主动保存
+              </span>
+              <h3>在信息出现的地方直接保存</h3>
+              <ul>
+                <li>X 推文旁保存单条投资观点、长推和来源链接</li>
+                <li>ChatGPT / Gemini 中保存本轮投资分析片段</li>
+                <li>选中文本右键保存，作为跨页面兜底入口</li>
+              </ul>
+            </div>
+            <div class="mock-screen save-screen" aria-hidden="true">
+              <div class="screen-toolbar">
+                <span>X</span>
+                <button type="button">保存</button>
+              </div>
+              <p>“BTC 上涨由 ETF 资金流、减半预期和流动性改善驱动。”</p>
+              <div class="highlight-line"></div>
+            </div>
+          </article>
+
+          <article class="feature-row reversed">
+            <div class="feature-copy">
+              <span class="feature-label">
+                <i data-lucide="scan-text"></i>
+                AI 结构化
+              </span>
+              <h3>把原文变成投资情报卡</h3>
+              <ul>
+                <li>提取关联资产、市场、观点方向和信息类型</li>
+                <li>拆出核心理由、风险点和后续待验证事项</li>
+                <li>先生成草稿，用户确认后再进入情报库</li>
+              </ul>
+            </div>
+            <div class="mock-screen structure-screen" aria-hidden="true">
+              <div class="field-row">
+                <span>资产</span>
+                <strong>TSLA</strong>
+              </div>
+              <div class="field-row">
+                <span>方向</span>
+                <strong>中性偏谨慎</strong>
+              </div>
+              <div class="field-stack">
+                <span>待验证事项</span>
+                <p>交付数据、汽车毛利率、价格策略变化</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-row">
+            <div class="feature-copy">
+              <span class="feature-label">
+                <i data-lucide="library"></i>
+                情报库
+              </span>
+              <h3>按资产聚合所有线索</h3>
+              <ul>
+                <li>按股票、来源、方向、状态筛选历史情报</li>
+                <li>保留原文、链接和 AI 摘要，方便回看上下文</li>
+                <li>从“保存过”推进到“持续跟踪过”</li>
+              </ul>
+            </div>
+            <div class="mock-screen library-screen" aria-hidden="true">
+              <div class="asset-tabs">
+                <span class="active">NVDA</span>
+                <span>BTC</span>
+                <span>TSLA</span>
+              </div>
+              <div class="intel-item">
+                <strong>数据中心需求仍强</strong>
+                <small>X · 偏多 · 待跟踪</small>
+              </div>
+              <div class="intel-item">
+                <strong>Blackwell 放量节奏</strong>
+                <small>ChatGPT · 中性偏多</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-row reversed">
+            <div class="feature-copy">
+              <span class="feature-label">
+                <i data-lucide="file-chart-column"></i>
+                跟踪报告
+              </span>
+              <h3>把待验证观点整理成复盘报告</h3>
+              <ul>
+                <li>围绕高频资产生成 AI 摘要和手动跟踪报告</li>
+                <li>查看哪些观点已验证、哪些需要继续观察</li>
+                <li>支持 Markdown / CSV 导出用于进一步分析</li>
+              </ul>
+            </div>
+            <div class="mock-screen report-screen" aria-hidden="true">
+              <div class="report-head">本周投资情报跟踪报告</div>
+              <div class="report-chart">
+                <span style="height: 72%"></span>
+                <span style="height: 46%"></span>
+                <span style="height: 58%"></span>
+                <span style="height: 34%"></span>
+              </div>
+              <p>市场焦点从“是否增长”转向“增长能否兑现”。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="workflow-section" id="workflow" aria-labelledby="workflow-title">
+        <div class="section-heading compact">
+          <p>工作流</p>
+          <h2 id="workflow-title">保存，确认，跟踪，复盘</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-step">
+            <span>01</span>
+            <h3>看到线索</h3>
+            <p>用户在 X、ChatGPT 或 Gemini 中看到值得保存的投资信息。</p>
+          </div>
+          <div class="timeline-step">
+            <span>02</span>
+            <h3>主动保存</h3>
+            <p>插件读取用户明确选择的内容片段，并生成结构化草稿。</p>
+          </div>
+          <div class="timeline-step">
+            <span>03</span>
+            <h3>确认入库</h3>
+            <p>用户检查摘要、资产、方向、风险和验证点，确认后保存。</p>
+          </div>
+          <div class="timeline-step">
+            <span>04</span>
+            <h3>复盘报告</h3>
+            <p>围绕资产和验证事项生成可回看的跟踪报告。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="positioning-section" id="positioning" aria-labelledby="positioning-title">
+        <div class="positioning-copy">
+          <p class="section-kicker">产品边界</p>
+          <h2 id="positioning-title">Alpha Mark 是情报整理工具，不是投资顾问</h2>
+          <p>
+            首期聚焦“保存、结构化、跟踪、复盘”。产品不提供荐股、买卖建议、目标价预测，也不连接交易账户。
+          </p>
+        </div>
+
+        <div class="boundary-grid">
+          <div>
+            <i data-lucide="check"></i>
+            <strong>做</strong>
+            <p>整理用户主动保存的信息，沉淀可回看的个人投资情报。</p>
+          </div>
+          <div>
+            <i data-lucide="shield-alert"></i>
+            <strong>不做</strong>
+            <p>不预测涨跌，不替用户判断买卖，不读取全部浏览内容。</p>
+          </div>
+          <div>
+            <i data-lucide="lock-keyhole"></i>
+            <strong>隐私优先</strong>
+            <p>仅在用户点击保存时处理对应内容，并保留确认步骤。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="platform-section" aria-labelledby="platform-title">
+        <div class="section-heading compact">
+          <p>首期支持平台</p>
+          <h2 id="platform-title">从高频信息源开始</h2>
+        </div>
+        <div class="platform-list">
+          <span>X</span>
+          <span>ChatGPT</span>
+          <span>Gemini</span>
+          <span>Chrome Web Store</span>
+          <span>Markdown Export</span>
+          <span>CSV Export</span>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading compact">
+          <p>FAQ</p>
+          <h2 id="faq-title">后续可继续补充的信息</h2>
+        </div>
+
+        <div class="faq-list">
+          <details open>
+            <summary>什么时候可以安装？</summary>
+            <p>目前文案中先保留内测入口，正式 Chrome Web Store 链接发布后可替换。</p>
+          </details>
+          <details>
+            <summary>支持哪些市场？</summary>
+            <p>首期以港美股和数字货币场景优先，A 股信息可以兼容保存和整理。</p>
+          </details>
+          <details>
+            <summary>数据会如何存储？</summary>
+            <p>Alpha Mark 仅处理用户主动保存的内容，具体数据类型、AI 处理和用户控制方式见隐私政策。</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="waitlist-section" id="waitlist" aria-labelledby="waitlist-title">
+        <div>
+          <p class="section-kicker">Alpha Mark</p>
+          <h2 id="waitlist-title">把零散投资信息变成可复盘资产</h2>
+          <p>内测表单、支持邮箱、Chrome 商店链接和正式隐私政策 URL 后续补充即可。</p>
+        </div>
+        <a class="primary-button large" href="./privacy.html">
+          <i data-lucide="shield-check"></i>
+          查看隐私政策
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Alpha Mark</span>
+      <a href="./privacy.html">隐私政策</a>
+    </footer>
+  </body>
+</html>
