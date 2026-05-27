@@ -1,5 +1,6 @@
 const root = document.documentElement;
 const toggle = document.querySelector("#theme-toggle");
+const themedLogos = document.querySelectorAll("[data-logo-light][data-logo-dark]");
 
 const storedTheme = window.localStorage.getItem("alpha-mark-theme");
 if (storedTheme === "dark") {
@@ -20,6 +21,18 @@ function updateThemeIcon() {
   renderIcons();
 }
 
+function updateThemeLogos() {
+  const isDark = root.classList.contains("dark");
+  themedLogos.forEach((logo) => {
+    const src = logo.getAttribute(isDark ? "data-logo-dark" : "data-logo-light");
+    if (src) {
+      logo.setAttribute("src", src);
+    }
+  });
+}
+
+updateThemeLogos();
+
 toggle?.addEventListener("click", () => {
   root.classList.toggle("dark");
   window.localStorage.setItem(
@@ -27,9 +40,11 @@ toggle?.addEventListener("click", () => {
     root.classList.contains("dark") ? "dark" : "light",
   );
   updateThemeIcon();
+  updateThemeLogos();
 });
 
 window.addEventListener("DOMContentLoaded", () => {
   updateThemeIcon();
+  updateThemeLogos();
   renderIcons();
 });
